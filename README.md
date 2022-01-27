@@ -1,4 +1,10 @@
 # docker-fail2ban
+
+Useful Links:
+https://hub.docker.com/r/crazymax/fail2ban
+http://www.fail2ban.org/wiki/index.php/Main_Page
+https://forums.unraid.net/topic/119186-fail2ban-setup-with-nginx-and-cloudflare-tunnels/
+
 Fail2ban Docker image based on Alpine Linux for use with UnRaid OS
 
 Download the container from the UnRaid Community Apps store
