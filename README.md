@@ -37,7 +37,7 @@ This will create firewall rule on cloudflare. I tested the ban and unban action 
 
 Here are the CURL commands for testing:
 
-**BAN**
+**BAN** (replace cfuser and cftoken with your credentials. Replace <IP> with the IP you want banned. eg.. "value":"1.2.3.4"
 ```
 curl -s -X POST "https://api.cloudflare.com/client/v4/user/firewall/access_rules/rules" \
             -H "X-Auth-Email: <cfuser>" \
