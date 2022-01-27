@@ -91,7 +91,7 @@ bantime.increment = true
 ```  
                                                                                             
 **Setup Vaulwarden Filter**
-*Vaultwarden filter.d/*
+*Vaultwarden filter.d/vaultwarden.local*
                                                                                             
 ```
                                                                                             
