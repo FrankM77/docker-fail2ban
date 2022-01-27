@@ -70,7 +70,7 @@ Add cloudflare config action in jail.d/vaultwarden.local. Name the action cloudf
 
                                                                                             
 **Setup Vaultwarden Jail**
-*Vaultwarden jail.d/vaultwarde.local*
+*Vaultwarden jail.d/vaultwarden.local*
                                                                                             
 ```
 # path_f2b/jail.d/vaultwarden.local
@@ -88,7 +88,21 @@ maxretry = 2
 bantime = 300
 findtime = 300
 bantime.increment = true
-```                                                                                            
+```  
                                                                                             
+**Setup Vaulwarden Filter**
+*Vaultwarden filter.d/*
+                                                                                            
+```
+                                                                                            
+# path_f2b/filter.d/vaultwarden.local
+
+[INCLUDES]
+before = common.conf
+
+[Definition]
+failregex = ^.*Username or password is incorrect\. Try again\. IP: <ADDR>\. Username:.*$
+ignoreregex =
+```                                                                                            
 
 
