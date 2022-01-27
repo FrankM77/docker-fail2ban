@@ -19,12 +19,12 @@ Download the container from the UnRaid Community Apps store
 
 You must add a path to your container log file that you want fail2ban to monitor. 
 
-Important: If you are using Nginx Proxy Manger with Cloudflare tunnels then you need to pass the client IP to your container that you want fail2ban to protect.  For instance I have fail2ban protecting my Jellyfin container but inititally in the Jellyfin logfiles it would log the IP address as 172.18.0.1, so in order to log the real connecting client IP you need to go into:
+**Important**: If you are using Nginx Proxy Manger with Cloudflare tunnels then you need to pass the client IP to your container that you want fail2ban to protect.  For instance I have fail2ban protecting my Jellyfin container but inititally in the Jellyfin logfiles it would log the IP address as 172.18.0.1, so in order to log the real connecting client IP you need to go into:
 
 Nginx Proxy manager--->proxy host---->Advanced------>Custom Nginx Configuration add "real_ip_header CF-Connecting-IP;"  without the quotes. 
 You will then notice that your container log (in my case jellyfin) will have the real ip of the connecting user/client.  
 
-PROBLEM: fail2ban is running and according to its logs it is banning the external IP address, but you are still able to access the container website
+**PROBLEM: fail2ban is running and according to its logs it is banning the external IP address, but you are still able to access the container website
 
 Solution: Setup API to modify Cloudflare Firewall Tools reference: https://guides.wp-bullet.com/integrate-fail2ban-cloudflare-api-v4-guide/
 
