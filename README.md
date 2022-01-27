@@ -16,7 +16,10 @@ PROBLEM: fail2ban is running and according to its logs it is banning the externa
 
 Solution: Setup API to modify Cloudflare Firewall Tools reference: https://guides.wp-bullet.com/integrate-fail2ban-cloudflare-api-v4-guide/
 
+Step 1:
 Add cloudflare configuration file in action.d/cloudflare-apiv4.conf
+You can find a copy of my working file above in the master branch.
+
 Add cloudflare config action in jail.d/'your_container'.local. Name the action cloudflare-apiv4 (do not include the .conf file extension)
 (example) action = iptables-allports[name='your_container', chain=DOCKER-USER]  
                               cloudflare-apiv4
