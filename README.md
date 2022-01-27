@@ -35,6 +35,15 @@ Go to the bottom of the file and change the cfuser and cftoken to your own.
 
 This will create firewall rule on cloudflare. I tested the ban and unban action by manually typing the CURL commands and verifying on cloudflare that it made the changes. I recommend doing the same.  
 
+Here are the CURL commands for testing: 
+```
+curl -s -X POST "https://api.cloudflare.com/client/v4/user/firewall/access_rules/rules" \
+            -H "X-Auth-Email: <cfuser>" \
+            -H "X-Auth-Key: <cftoken>" \
+            -H "Content-Type: application/json" \
+            --data '{"mode":"block","configuration":{"target":"ip","value":"<ip>"},"notes":"Fail2ban <name>"}'
+```
+
 -Step 2 Add cloudflare config action in jail.d/'your_container'.local. Name the action cloudflare-apiv4 (do not include the .conf file extension)
 (example) action = iptables-allports[name='your_container', chain=DOCKER-USER]  
                    cloudflare-apiv4
