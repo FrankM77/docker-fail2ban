@@ -1,4 +1,4 @@
-![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+![This is an image](https://raw.githubusercontent.com/FrankM77/docker-fail2ban/master/Fail2ban_logo.png)
 # docker-fail2ban
 
 Useful Links:
