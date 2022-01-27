@@ -28,14 +28,14 @@ You will then notice that your container log (in my case jellyfin) will have the
 
 Solution: Setup API to modify Cloudflare Firewall Tools reference: https://guides.wp-bullet.com/integrate-fail2ban-cloudflare-api-v4-guide/
 
-Step 1:
+-Step 1:
 Add cloudflare configuration file in action.d/cloudflare-apiv4.conf
 You can find a copy of my working file above in the master branch or using this link : https://github.com/FrankM77/docker-fail2ban/blob/master/cloudflare-apiv4.conf
 Go to the bottom of the file and change the cfuser and cftoken to your own.
 
 This will create firewall rule on cloudflare. I tested the ban and unban action by manually typing the CURL commands and verifying on cloudflare that it made the changes. I recommend doing the same.  
 
-Add cloudflare config action in jail.d/'your_container'.local. Name the action cloudflare-apiv4 (do not include the .conf file extension)
+-Step 2 Add cloudflare config action in jail.d/'your_container'.local. Name the action cloudflare-apiv4 (do not include the .conf file extension)
 (example) action = iptables-allports[name='your_container', chain=DOCKER-USER]  
                               cloudflare-apiv4
                               
