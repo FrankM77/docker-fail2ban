@@ -45,7 +45,19 @@ curl -s -X POST "https://api.cloudflare.com/client/v4/user/firewall/access_rules
             -H "Content-Type: application/json" \
             --data '{"mode":"block","configuration":{"target":"ip","value":"<ip>"},"notes":"Fail2ban <name>"}'
 ```
-
+  
+  **UNBAN**
+  ```
+  curl -s -X DELETE "https://api.cloudflare.com/client/v4/user/firewall/access_rules/rules/$( \
+              curl -s -X GET "https://api.cloudflare.com/client/v4/user/firewall/access_rules/rules?mode=block&configuration_target=ip&configuration_value=<ip>&page=1&per_page=1&match=all" \
+             -H "X-Auth-Email: <cfuser>" \
+             -H "X-Auth-Key: <cftoken>" \
+             -H "Content-Type: application/json" | awk -F"[,:}]" '{for(i=1;i<=NF;i++){if($i~/'id'\042/){print $(i+1);}}}' | tr -d '"' | sed -e 's/^[ \t]*//' | head -n 1)" \
+             -H "X-Auth-Email: <cfuser>" \
+             -H "X-Auth-Key: <cftoken>" \
+             -H "Content-Type: application/json"
+```
+                                                                                            
 -Step 2 Add cloudflare config action in jail.d/'your_container'.local. Name the action cloudflare-apiv4 (do not include the .conf file extension)
 (example) action = iptables-allports[name='your_container', chain=DOCKER-USER]  
                    cloudflare-apiv4
