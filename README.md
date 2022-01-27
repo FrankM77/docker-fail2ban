@@ -24,7 +24,7 @@ You must add a path to your container log file that you want fail2ban to monitor
 Nginx Proxy manager--->proxy host---->Advanced------>Custom Nginx Configuration add "real_ip_header CF-Connecting-IP;"  without the quotes. 
 You will then notice that your container log (in my case jellyfin) will have the real ip of the connecting user/client.  
 
-**PROBLEM: fail2ban is running and according to its logs it is banning the external IP address, but you are still able to access the container website
+**PROBLEM**: fail2ban is running and according to its logs it is banning the external IP address, but you are still able to access the container website
 
 Solution: Setup API to modify Cloudflare Firewall Tools reference: https://guides.wp-bullet.com/integrate-fail2ban-cloudflare-api-v4-guide/
 
