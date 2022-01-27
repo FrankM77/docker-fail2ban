@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>fail2ban</Name>
+  <Repository>crazymax/fail2ban:latest</Repository>
+  <Registry>https://hub.docker.com/r/crazymax/fail2ban</Registry>
+  <Network>proxynet</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>true</Privileged>
+  <Support>https://forums.unraid.net/topic/119186-fail2ban-setup-with-nginx-and-cloudflare-tunnels/</Support>
+  <Project/>
+  <Overview/>
+  <Category>Security: Tools:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/FrankM77/docker-fail2ban/master/Fail2ban_logo.png</Icon>
+  <ExtraParams>--cap-add=NET_ADMIN --cap-add=NET_RAW</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1643302893</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>proxynet</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/var/log</HostDir>
+      <ContainerDir>/var/log</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/fail2ban</HostDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/vaultwarden</HostDir>
+      <ContainerDir>/vaultwarden</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/Jellyfin/log/</HostDir>
+      <ContainerDir>/Jellyfin</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="LOG_FILE" Target="/var/log" Default="" Mode="rw" Description="Container Path: /var/log" Type="Path" Display="always" Required="false" Mask="false">/var/log</Config>
+  <Config Name="data" Target="/data" Default="" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/fail2ban</Config>
+  <Config Name="Host Path 3" Target="/vaultwarden" Default="" Mode="rw" Description="Container Path: /vaultwarden" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/vaultwarden</Config>
+  <Config Name="Jellyfin Log file" Target="/Jellyfin" Default="" Mode="rw" Description="Container Path: /Jellyfin" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/Jellyfin/log/</Config>
+</Container>
