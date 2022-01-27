@@ -11,7 +11,7 @@ https://forums.unraid.net/topic/119186-fail2ban-setup-with-nginx-and-cloudflare-
 
 Icon URL : https://raw.githubusercontent.com/FrankM77/docker-fail2ban/master/Fail2ban_logo.png
 
-> Fail2ban Docker image based on Alpine Linux for use with UnRaid OS
+Fail2ban Docker image based on Alpine Linux for use with UnRaid OS
 
 Download the container from the UnRaid Community Apps store
 
