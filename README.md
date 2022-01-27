@@ -36,6 +36,7 @@ Go to the bottom of the file and change the cfuser and cftoken to your own.
 This will create firewall rule on cloudflare. I tested the ban and unban action by manually typing the CURL commands and verifying on cloudflare that it made the changes. I recommend doing the same.  
 
 Here are the CURL commands for testing: 
+**BAN
 ```
 curl -s -X POST "https://api.cloudflare.com/client/v4/user/firewall/access_rules/rules" \
             -H "X-Auth-Email: <cfuser>" \
