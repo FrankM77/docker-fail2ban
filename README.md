@@ -37,13 +37,13 @@ This will create firewall rule on cloudflare. I tested the ban and unban action 
 
 -Step 2 Add cloudflare config action in jail.d/'your_container'.local. Name the action cloudflare-apiv4 (do not include the .conf file extension)
 (example) action = iptables-allports[name='your_container', chain=DOCKER-USER]  
-                              cloudflare-apiv4
+                   cloudflare-apiv4
                               
 Make sure you use the same name in both places for 'your-container'
 For example: 
 Add cloudflare config action in jail.d/vaultwarden.local. Name the action cloudflare-apiv4 (do not include the .conf file extension)
 (example) action = iptables-allports[name=vaultwarden, chain=DOCKER-USER]  
-                              cloudflare-apiv4 
+                   cloudflare-apiv4 
 
 
 
