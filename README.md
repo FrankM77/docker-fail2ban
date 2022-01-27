@@ -46,7 +46,7 @@ curl -s -X POST "https://api.cloudflare.com/client/v4/user/firewall/access_rules
             --data '{"mode":"block","configuration":{"target":"ip","value":"<ip>"},"notes":"Fail2ban <name>"}'
 ```
   
-  **UNBAN** (replace <IP> with IP you want unbanned, eg. value=1.2.3.4
+  **UNBAN** (replace value=<IP> with IP you want unbanned, eg. value=1.2.3.4
   ```
   curl -s -X DELETE "https://api.cloudflare.com/client/v4/user/firewall/access_rules/rules/$( \
               curl -s -X GET "https://api.cloudflare.com/client/v4/user/firewall/access_rules/rules?mode=block&configuration_target=ip&configuration_value=<ip>&page=1&per_page=1&match=all" \
