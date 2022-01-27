@@ -8,11 +8,13 @@ http://www.fail2ban.org/wiki/index.php/Main_Page
 
 https://forums.unraid.net/topic/119186-fail2ban-setup-with-nginx-and-cloudflare-tunnels/
 
+Icon URL : https://raw.githubusercontent.com/FrankM77/docker-fail2ban/master/Fail2ban_logo.png
+
 Fail2ban Docker image based on Alpine Linux for use with UnRaid OS
 
 Download the container from the UnRaid Community Apps store
 
-Icon URL : https://raw.githubusercontent.com/FrankM77/docker-fail2ban/master/Fail2ban_logo.png
+
 
 You must add a path to your container log file that you want fail2ban to monitor. 
 
