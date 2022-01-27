@@ -28,7 +28,7 @@ Make sure you use the same name in both places for 'your-container'
 For example: 
 Add cloudflare config action in jail.d/vaultwarden.local. Name the action cloudflare-apiv4 (do not include the .conf file extension)
 (example) action = iptables-allports[name=vaultwarden, chain=DOCKER-USER]  
-                              cloudflare-apiv4
+                              cloudflare-apiv4 
 
 
 
