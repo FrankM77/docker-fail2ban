@@ -68,5 +68,27 @@ Add cloudflare config action in jail.d/vaultwarden.local. Name the action cloudf
 (example) action = iptables-allports[name=vaultwarden, chain=DOCKER-USER]  
                    cloudflare-apiv4 
 
+                                                                                            
+**Setup Vaultwarden Jail**
+*Vaultwarden jail.d/vaultwarde.local*
+                                                                                            
+```
+# path_f2b/jail.d/vaultwarden.local
+
+[vaultwarden]
+enabled = true
+port = 80,443,8081
+filter = vaultwarden
+#banaction = %(banaction_allports)s
+action = iptables-allports[name=vaultwarden, chain=DOCKER-USER]
+         cloudflare-apiv4
+#Path to vaultwarden log inside the container
+logpath = /vaultwarden/vaultwarden.log
+maxretry = 2
+bantime = 300
+findtime = 300
+bantime.increment = true
+```                                                                                            
+                                                                                            
 
 
