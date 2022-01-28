@@ -13,7 +13,11 @@ Icon URL : https://raw.githubusercontent.com/FrankM77/docker-fail2ban/master/Fai
 
 Fail2ban Docker image based on Alpine Linux for use with UnRaid OS
 
-Download the container from the UnRaid Community Apps store
+##Steps:
+
+1. Download the container from the UnRaid Community Apps store
+2. In Unraid template create a path to your container's log file that you want fail2ban to monitor
+3. Start fail2ban and check logs to make sure server is ready
 
 
 
