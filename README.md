@@ -18,6 +18,7 @@ Fail2ban Docker image based on Alpine Linux for use with UnRaid OS
 1. Download the container from the UnRaid Community Apps store
 2. In Unraid template create a path to your container's log file that you want fail2ban to monitor
 3. Start fail2ban and check logs to make sure server is ready
+4. ##Create jails, filters, and actions ## On your host (for me its /mnt/user/appdata/fail2ban) go to your fail2ban folder.  You will see the directories named jail.d, filter.d, and action.d.  You need to create a name_of_jail.local (this defines your jail) and put it in the jail.d directory, a filter- call it name_of_filter.local and put it in the filter.d directory (this tells fail2ban what to look for in the logfile of the container you are protecting with fail2ban), and lastly an action file (mine is called iptables-common.local) and put that in your action.d folder ( this tells fail2ban what action(s) to take---ban,unban etc....)
 
 
 
