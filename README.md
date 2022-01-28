@@ -22,7 +22,7 @@ Fail2ban Docker image based on Alpine Linux for use with UnRaid OS
 
 
 
-You must add a path to your container log file that you want fail2ban to monitor. 
+**You must add a path to your container log file that you want fail2ban to monitor.** from step 2 above 
 
 **Important**: If you are using Nginx Proxy Manger with Cloudflare tunnels then you need to pass the client IP to your container that you want fail2ban to protect.  For instance I have fail2ban protecting my Jellyfin container but inititally in the Jellyfin logfiles it would log the IP address as 172.18.0.1, so in order to log the real connecting client IP you need to go into:
 
