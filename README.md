@@ -36,7 +36,7 @@ Solution: Setup API to modify Cloudflare Firewall Tools reference: https://guide
 -Step 1:
 Add cloudflare configuration file in action.d/cloudflare-apiv4.conf
 You can find a copy of my working file above in the master branch or using this link : https://github.com/FrankM77/docker-fail2ban/blob/master/cloudflare-apiv4.conf
-Go to the bottom of the file and change the cfuser and cftoken to your own.
+Go to the bottom of the file and change the cfuser and cftoken to your own.  Go get your CloudFlare API key and replace the values
 
 This will create firewall rule on cloudflare. I tested the ban and unban action by manually typing the CURL commands and verifying on cloudflare that it made the changes. I recommend doing the same.  
 
