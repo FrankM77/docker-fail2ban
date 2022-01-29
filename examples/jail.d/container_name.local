@@ -7,7 +7,7 @@ filter = container_name
 #banaction = %(banaction_allports)s
 action = iptables-allports[name=container_name, chain=DOCKER-USER]
          cloudflare-apiv4
-#Path to log inside the container
+#Path to logfile......."inside the container"!!!!!
 logpath = path_to_container_name/name_of_log_file.log
 maxretry = 2
 bantime = 300
