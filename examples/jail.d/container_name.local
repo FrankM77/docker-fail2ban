@@ -1,0 +1,15 @@
+# path_f2b/jail.d/container_name.local
+
+[container_name]
+enabled = true
+port = 80,443,8081
+filter = container_name
+#banaction = %(banaction_allports)s
+action = iptables-allports[name=container_name, chain=DOCKER-USER]
+         cloudflare-apiv4
+#Path to container_name log inside the container
+logpath = container_name/container_name.log
+maxretry = 2
+bantime = 300
+findtime = 300
+bantime.increment = true

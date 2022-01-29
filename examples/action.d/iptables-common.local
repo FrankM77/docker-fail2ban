@@ -1,0 +1,6 @@
+# /mnt/user/appdata/fail2ban/action.d/iptables-common.local
+
+[Init]
+blocktype = DROP
+[Init?family=inet6]
+blocktype = DROP
